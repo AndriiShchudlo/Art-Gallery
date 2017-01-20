@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-4">
+        <div class="panel panel-footer">  
+    
+            <div class="layer">
+                <p  align="justify"> {{artDescription}} </p> 
+            </div>
+            
+            <div class="panel body">
+                <p>
+                    <textarea placeholder = "Add a new comentar..." id="1" class="form-control"></textarea>
+                   </p>
+                    <div class="block1" >
+                    <button type="button" class="btn">Add coment</button>              
+                    <input type="text" class="form-control" style="width: 35%" placeholder="Enter your name">
+                    <input type="text" class="form-control" style="width: 35%" placeholder="Enter your email">
+                 </div>
+            </div>
+            <div class="panel body">
+              <ul *ngFor="let coments of coments"> 
+                    
+                  <div class="panel panel-header"> <div class="c">
+                    <p class="coment_text">{{coments.commentMessage}}</p>
+                    <span class="author_text">{{coments.author}}</span>
+                    <!--<span class="date_text">{{coments.dateOfCreation}}</span> -->
+                  </div></div>
+                  
+             </ul>        
+        </div>
+  </div>
+  </div>
