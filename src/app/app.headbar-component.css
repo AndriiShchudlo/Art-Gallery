@@ -1,0 +1,29 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css";
+
+body{
+    background-color: #F5EFE6
+}
+
+.header-group {
+    margin: auto;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-justify-content: flex-end;
+   justify-content: flex-end;
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+   font-style: bold;
+}
+
+.logging-group {
+    margin-right: 10px;   
+}
+
+.searching-group {
+    margin-right: 20px;
+}

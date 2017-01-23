@@ -1,0 +1,41 @@
+.panel_inf{
+    background: black;
+    padding: 8px;
+}
+.text_panel_inf_date{
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    color: white;
+     margin-right: 15px;
+}
+.view_text{
+    display: block;
+    text-align: left;
+    margin-left: 5px;
+    color:azure; 
+    }
+ a {
+    color: #008000; 
+    text-decoration: none;
+   }
+   a:visited {
+    color: greenyellow; 
+   } 
+   a:hover {
+    color: lawngreen; 
+    text-decoration: underline; 
+   }
+   .like_style{
+       color: snow;
+       display: block; 
+       float: left;
+   }
+   .like_style:hover{
+       color: aqua;
+   }
+   .view_style{
+       color: snow;
+      display: block; 
+      float: left;
+   }
