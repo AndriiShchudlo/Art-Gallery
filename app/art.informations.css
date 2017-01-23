@@ -38,7 +38,7 @@ ul :nth-child(even) {
     text-align: inherit;
 }
 .layer {
-    background:snow; /* Цвет фона */
-  
+    background:black; /* Цвет фона */
+    color: snow ;
     padding: 20px; /* Поля вокруг текста */
    }
