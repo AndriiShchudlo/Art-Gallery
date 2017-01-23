@@ -1,8 +1,6 @@
-import { Component,OnInit} from '@angular/core';
-import { Art } from './art';
-import {InfoBlock} from './info-block';
+import { Art} from "./art";
 
-const ART: Art[] = [
+export const ART: Art[] = [
   { id: 11, name: 'Mr. Nice',likes: 11, views:25 ,dateOfCreation : '11.10.2009',
 imagePath: 'http://7oom.ru/wp-content/uploads/foto-priroda-31.jpg',
 description: 'dgfsgfsdfsefsefd frges'},
@@ -44,21 +42,3 @@ description: 'dgfsgfsdfsefsefd frges'},
 imagePath: 'http://7oom.ru/wp-content/uploads/foto-priroda-39.jpg',
 description: 'dgfsgfsdfsefsefd frges'},
 ];
-
-
-@Component({
-
- moduleId: module.id,
-  selector: 'my-flex-container',
-  templateUrl: './my-flex-container.html',
-  styleUrls: ['./my-flex-container.css']
-})
-
-export class MyFlexContainer {
-
-arts = ART ;
-
-show(containerArts: Art[]){
-
-}
-}

@@ -26,7 +26,7 @@
      -moz-transition: all 1.3s ease-out;
    -o-transition: all 1.3s ease-out;
     -webkit-transition: all 1.3s ease-out;
-    -webkit-filter: brightness(90%);
+    -webkit-filter: brightness(80%);
     
 }
 .my-flex-block img:hover{
