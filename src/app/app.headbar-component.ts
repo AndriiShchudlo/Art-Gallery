@@ -43,6 +43,6 @@ export class HeadBarComponent implements OnInit {
       this.searchService.get('степан').then(search => this.arts = search);
     }
     btnSearchOnClick(){
-      
+      this.searchService.get('степан').then(search => this.arts = search);
     }
 }

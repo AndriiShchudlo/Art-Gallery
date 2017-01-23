@@ -23,9 +23,10 @@ tr:number;
 ngOnInit(){
   this.artService.get().then(search => this.arts = search);;
 }
-
+isLiked = false;
 likeClick(id: number ){
-   this.artService.artLike(id).then(s => this.tr=s);
-    
+    //if (this.isLiked==true) return;
+    //this.isLiked = true;  Avoiding multiple like clicks in single session
+    this.artService.artLike(id).then(s => this.tr=s);
   }
 }

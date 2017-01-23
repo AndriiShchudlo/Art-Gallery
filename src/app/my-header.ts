@@ -25,6 +25,7 @@ export class MyHeader {
   searchKeyWord:string = "";
   isLogFieldActive = false;
   //arts: Art[] = [];
+  //constructor (private searchService: Service) {  } 
   toggleLoginField():void{
         if(this.btnState === 'out') {
           this.btnState = 'in';
@@ -34,6 +35,9 @@ export class MyHeader {
           this.btnState = "out";
           this.isLogFieldActive = false;
         }
+    }
+    btnSearchOnClick(){
+     //this.searchService.get('степан').then(search => this.arts = search);
     }
 }
 
