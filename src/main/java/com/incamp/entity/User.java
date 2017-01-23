@@ -1,7 +1,6 @@
-package com.incamp.entities;
+package com.incamp.entity;
 
 import javax.persistence.*;
-import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -9,15 +8,14 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private int id;
+
     private String userName;
     private String firstName;
     private String lastName;
     private String email;
-    @OneToMany(fetch = FetchType.EAGER)
-    private List<Art> userArts;
 
     public int getId() {
         return id;
@@ -59,33 +57,4 @@ public class User {
         this.email = email;
     }
 
-//    public boolean addArt(Art a) {
-//        if(!userArts.contains(a)) {
-//            userArts.add(a);
-//            return true;
-//        }
-//
-//        return false;
-//    }
-//
-//    public boolean removeArt(Art a) {
-//        if(userArts.contains(a)) {
-//            userArts.remove(a);
-//            return true;
-//        }
-//
-//        return false;
-//    }
-
-   /* public List<Art> getArts() {
-        return Collections.unmodifiableList(userArts);
-    }*/
-
-    public List<Art> getUserArts() {
-        return userArts;
-    }
-
-    public void setUserArts(List<Art> userArts) {
-        this.userArts = userArts;
-    }
 }

@@ -4,9 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GallaryApplication {
+public class GalleryApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GallaryApplication.class, args);
+		SpringApplication.run(GalleryApplication.class, args);
 	}
 }
+ 
