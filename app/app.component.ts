@@ -7,7 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: [ 'app.component.css' ]
 })
 export class AppComponent  { 
-   nameAuctor = 'Erik';
-   views =25;
-   date='25.11.17';
-   like=7; }
+    }
