@@ -3,5 +3,4 @@ export class Coments {
   author: string;
   commentMessage: string;
   dateOfCreation: string;
-
 }

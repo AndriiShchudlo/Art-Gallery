@@ -1,0 +1,33 @@
+<div class="holder">
+  <a href="#"> <img src="{{art.imagePath}}"></a>
+
+  <div class="block">
+
+    <div class="side">
+      <span (click)="addLike()" class="glyphicon glyphicon-heart like_style" aria-hidden="true">{{art.likes}}</span>
+      <br>
+      <span class="glyphicon glyphicon-eye-open view_style" aria-hidden="true">{{art.views}}</span>
+    </div>
+    <div class="center-info">
+
+      <a href="#" class="tag">classic</a>
+      <a href="#" class="tag">new</a>
+      <a href="#" class="tag">riverside</a>
+      <a href="#" class="tag">age</a>
+      <a href="#" class="tag">impro</a>
+      <a href="#" class="tag">rock</a>
+      <a href="#" class="tag">sun</a>
+
+      <a href="#" class="tag">impro</a>
+      <a href="#" class="tag">rock</a>
+      <a href="#" class="tag">sun</a>
+      <a href="#" class="tag">mountain</a>
+      <a href="#" class="tag">lviv</a>
+    </div>
+    <div class="side">
+      John Doe
+      <br>
+      {{art.dateOfCreation}}
+    </div>
+  </div>
+</div>
