@@ -10,14 +10,13 @@ import {Art} from "../object/art";
   styleUrls: ['art-container.component.css']
 })
 
-export class MyFlexContainer implements OnInit {
-
+export class MyFlexContainer {
   constructor(private artService: ArtService) {
   }
 
   arts: Art[] = [];
 
   ngOnInit() {
-    this.artService.get().then(arts => this.arts = arts);
+    this.artService.get('').then(arts => this.arts = arts);
   }
 }

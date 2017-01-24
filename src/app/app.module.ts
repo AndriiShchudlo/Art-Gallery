@@ -7,6 +7,8 @@ import {AppComponent} from './app.component/app.component';
 import {MyFlexContainer} from './my.flex.container/art-container.component';
 import {ArtService} from './service/art.service'
 import {ArtComponent} from "./art.component/art.component";
+import {HeadBarComponent} from './headbar.component/headbar.component'
+import {LoginField} from "./headbar.component/login-field.component";
 
 @NgModule({
   imports: [
@@ -15,7 +17,7 @@ import {ArtComponent} from "./art.component/art.component";
     HttpModule
   ],
   declarations: [
-    AppComponent, ArtComponent, MyFlexContainer
+    AppComponent, ArtComponent, MyFlexContainer, HeadBarComponent, LoginField
   ],
   providers: [ArtService],
   bootstrap: [AppComponent]

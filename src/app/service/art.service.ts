@@ -6,12 +6,11 @@ import {Art} from "../object/art";
 
 @Injectable()
 export class ArtService {
-
   constructor(private http: Http) {
   }
 
-  get(): Promise<Art[]> {
-    return this.http.get(`http://10.0.2.124:8088/`)
+  get(request:string): Promise<Art[]> {
+    return this.http.get(`http://10.0.2.124:8088/${request}`)
       .toPromise()
       .then(response => response.json() as Art[])
   }
