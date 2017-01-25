@@ -2,6 +2,7 @@ import { Component, OnInit, trigger, state, style, transition, animate  } from '
 import {Art} from "../object/art";
 import {ArtService} from "../service/art.service";
 import { LoginField} from "./login-field.component"
+import {ArtContainer} from "../my.flex.container/art-container.component";
 
 
 @Component({
@@ -24,7 +25,7 @@ import { LoginField} from "./login-field.component"
 })
 
 export class HeadBarComponent implements OnInit {
-  constructor (private searchService: ArtService) {  }
+  constructor (private searchService: ArtService, artCont:ArtContainer) {  }
   btnState:string = 'out';
   searchKeyWord: string = "";
   //apc.changeArts("")
@@ -38,9 +39,9 @@ export class HeadBarComponent implements OnInit {
         }
     }
     ngOnInit(){
-      this.searchService.get('').then(search => this.arts = search);
+
     }
     btnSearchOnClick(){
-
+      this.searchService.get(this.searchKeyWord).then(search => this.arts = search);
     }
 }

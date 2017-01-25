@@ -3,17 +3,15 @@ import {ArtService} from "../service/art.service";
 import {Art} from "../object/art";
 
 @Component({
-
   moduleId: module.id,
   selector: 'art-container',
   templateUrl: 'art-container.component.html',
   styleUrls: ['art-container.component.css']
-})
+})1
 
-export class MyFlexContainer {
+export class ArtContainer {
   constructor(private artService: ArtService) {
   }
-
   arts: Art[] = [];
 
   ngOnInit() {

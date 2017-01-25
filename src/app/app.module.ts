@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component/app.component';
-import {MyFlexContainer} from './my.flex.container/art-container.component';
+import {ArtContainer} from './my.flex.container/art-container.component';
 import {ArtService} from './service/art.service'
 import {ArtComponent} from "./art.component/art.component";
 import {HeadBarComponent} from './headbar.component/headbar.component'
@@ -17,9 +17,9 @@ import {LoginField} from "./headbar.component/login-field.component";
     HttpModule
   ],
   declarations: [
-    AppComponent, ArtComponent, MyFlexContainer, HeadBarComponent, LoginField
+    AppComponent, ArtComponent, ArtContainer, HeadBarComponent, LoginField
   ],
-  providers: [ArtService],
+  providers: [ArtService, ArtContainer],
   bootstrap: [AppComponent]
 })
 export class AppModule {
