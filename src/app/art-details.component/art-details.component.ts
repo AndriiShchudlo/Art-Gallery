@@ -25,6 +25,7 @@ export class ArtDetailComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => this.artService.findArtById(+params['artId']))
       .subscribe(art => this.art = art);
+
   }
 }
 
