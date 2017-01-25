@@ -13,7 +13,7 @@ import {HeadBarComponent} from './headbar.component/headbar.component'
 import {LoginField} from "./login-field.component/login-field.component";
 import {HomeComponent} from "./home.component/home.component";
 import {ArtComments} from './comments/art.comments';
- import {ComentsService} from './service/comment.service'; 
+import {ComentsService} from './service/comment.service';
 
 @NgModule({
   imports: [
@@ -30,15 +30,15 @@ import {ArtComments} from './comments/art.comments';
         component: HomeComponent
       },
       {
-      path: '',
-      redirectTo: '/home',
-      pathMatch: 'full'
-    }
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      }
     ])
   ],
   declarations: [
-    AppComponent, ArtComponent, ArtContainer, ArtDetailComponent, 
-    HeadBarComponent, LoginField,HomeComponent, ArtComments
+    AppComponent, ArtComponent, ArtContainer, ArtDetailComponent,
+    HeadBarComponent, LoginField, HomeComponent, ArtComments
   ],
   providers: [ArtService, ComentsService],
   bootstrap: [AppComponent]

@@ -15,7 +15,7 @@ export class ArtComponent {
   }
 
   isLiked = false;
-s
+
   addLike() {
     if (this.isLiked) return;
     this.isLiked = true;
