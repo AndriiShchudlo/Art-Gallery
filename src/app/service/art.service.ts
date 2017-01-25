@@ -10,19 +10,25 @@ export class ArtService {
   }
 
   get(): Promise<Art[]> {
-    return this.http.get(`http://localhost:8088/`)
+    return this.http.get(`http://10.0.2.124:8088/`)
       .toPromise()
       .then(response => response.json() as Art[])
   }
 
   artLike(id: number): Promise<number> {
-    return this.http.get(`http://localhost:8088/artLike?artId=${id}`)
+    return this.http.get(`http://10.0.2.124:8088/artLike?artId=${id}`)
       .toPromise()
       .then(response => response.json() as number)
   }
 
   findArtById(id: number): Promise<Art> {
-    return this.http.get(`http://localhost:8088/findArtById?artId=${id}`)
+    return this.http.get(`http://10.0.2.124:8088/findArtById?artId=${id}`)
+      .toPromise()
+      .then(response => response.json() as Art)
+  }
+
+  addView(id: number): Promise<number> {
+    return this.http.get(`http://10.0.2.124:8088/art/addView?artId=${id}`)
       .toPromise()
       .then(response => response.json() as Art)
   }

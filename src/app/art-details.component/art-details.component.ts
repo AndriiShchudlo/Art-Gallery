@@ -18,7 +18,7 @@ export class ArtDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private location: Location,
-              private router: Router, private artService: ArtService) {
+              private artService: ArtService) {
   }
 
   ngOnInit(): void {
@@ -26,7 +26,15 @@ export class ArtDetailComponent implements OnInit {
       .switchMap((params: Params) => this.artService.findArtById(+params['artId']))
       .subscribe(art => this.art = art);
 
+    this.route.params
+      .subscribe((params: Params) => this.addView(+params['artId']));
   }
+
+  addView(artId: number): void {
+    this.artService.addView(artId).then(views => this.art.views = views)
+
+  }
+
 }
 
 
