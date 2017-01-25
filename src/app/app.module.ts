@@ -4,18 +4,30 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component/app.component';
-import {MyFlexContainer} from './my.flex.container/art-container.component';
 import {ArtService} from './service/art.service'
 import {ArtComponent} from "./art.component/art.component";
+import {ArtDetailComponent} from "./art-details/art-details.component";
+import {RouterModule} from "@angular/router";
+import {ArtContainer} from "./art.container/art-container.component";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {
+        path: 'detail',
+        component: ArtDetailComponent
+      },
+      {
+        path: '',
+        component: ArtContainer
+      }
+    ])
   ],
   declarations: [
-    AppComponent, ArtComponent, MyFlexContainer
+    AppComponent, ArtComponent, ArtContainer, ArtDetailComponent
   ],
   providers: [ArtService],
   bootstrap: [AppComponent]

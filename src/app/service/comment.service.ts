@@ -11,7 +11,7 @@ export class ComentsService {
   }
 
   get(): Promise<Coments[]> {
-    return this.http.get(`http://10.0.2.124:8088/art/1/comments`)
+    return this.http.get(`http://localhost:8088/art/1/comments`)
       .toPromise()
       .then(response => response.json() as Coments[]);
   }

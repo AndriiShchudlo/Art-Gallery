@@ -10,7 +10,7 @@ import {Art} from "../object/art";
   styleUrls: ['art-container.component.css']
 })
 
-export class MyFlexContainer implements OnInit {
+export class ArtContainer implements OnInit {
 
   constructor(private artService: ArtService) {
   }

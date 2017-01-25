@@ -11,13 +11,13 @@ export class ArtService {
   }
 
   get(): Promise<Art[]> {
-    return this.http.get(`http://10.0.2.124:8088/`)
+    return this.http.get(`http://localhost:8088/`)
       .toPromise()
       .then(response => response.json() as Art[])
   }
 
   artLike(id: number): Promise<number> {
-    return this.http.get(`http://10.0.2.124:8088/artLike?artId=${id}`)
+    return this.http.get(`http://localhost:8088/artLike?artId=${id}`)
       .toPromise()
       .then(response => response.json() as number)
   }
