@@ -1,6 +1,22 @@
 <div *ngIf="art">
-  detaillllllllllll{{art.name}}
-
-  <img src="{{art.imagePath}}">
+  <!--<img src="{{art.imagePath}}">-->
   <!--<h1>{{art.name}}</h1>-->
+
+  <div class="picture-container">
+    <div class="picture-block">
+      <img src="{{art.imagePath}}">
+    </div>
+    <!--<div class="info-block">-->
+    <!--<art-component [art]="art"></art-component>-->
+    <!--</div>-->
+    <div class=anot-block>
+      <p>{{art.description}}</p>
+    </div>
+    <div class=comment-block>
+      <comment-comp [artId]="art.id"></comment-comp>
+    </div>
+
+  </div>
 </div>
+
+

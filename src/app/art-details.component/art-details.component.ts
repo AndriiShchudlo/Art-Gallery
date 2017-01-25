@@ -9,7 +9,8 @@ import {Art} from "../object/art";
 @Component({
   moduleId: module.id,
   selector: 'art-detail-component',
-  templateUrl: './art-detail.component.html'
+  templateUrl: './art-detail.component.html',
+  styleUrls: ['art-detail.component.css']
 })
 export class ArtDetailComponent implements OnInit {
 
