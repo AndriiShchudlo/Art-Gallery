@@ -20,13 +20,18 @@ import {HomeComponent} from "./home.component/home.component";
     HttpModule,
     RouterModule.forRoot([
       {
-        path: 'detail',
+        path: 'detail/:artId',
         component: ArtDetailComponent
       },
       {
-        path: '',
+        path: 'home',
         component: HomeComponent
-      }
+      },
+      {
+      path: '',
+      redirectTo: '/home',
+      pathMatch: 'full'
+    }
     ])
   ],
   declarations: [
