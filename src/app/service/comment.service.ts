@@ -10,8 +10,8 @@ export class ComentsService {
   constructor(private http: Http) {
   }
 
-  get(): Promise<Coments[]> {
-    return this.http.get(`http://localhost:8088/art/1/comments`)
+  get(art_id:number): Promise<Coments[]> {
+    return this.http.get(`http://10.0.2.124:8088/art/${art_id}/comments`)
       .toPromise()
       .then(response => response.json() as Coments[]);
   }

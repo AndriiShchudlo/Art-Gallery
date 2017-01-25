@@ -12,6 +12,8 @@ import {ArtContainer} from "./art-container.component/art-container.component";
 import {HeadBarComponent} from './headbar.component/headbar.component'
 import {LoginField} from "./login-field.component/login-field.component";
 import {HomeComponent} from "./home.component/home.component";
+import {ArtComments} from './comments/art.comments';
+ import {ComentsService} from './service/comment.service'; 
 
 @NgModule({
   imports: [
@@ -35,9 +37,10 @@ import {HomeComponent} from "./home.component/home.component";
     ])
   ],
   declarations: [
-    AppComponent, ArtComponent, ArtContainer, ArtDetailComponent, HeadBarComponent, LoginField,HomeComponent
+    AppComponent, ArtComponent, ArtContainer, ArtDetailComponent, 
+    HeadBarComponent, LoginField,HomeComponent, ArtComments
   ],
-  providers: [ArtService],
+  providers: [ArtService, ComentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

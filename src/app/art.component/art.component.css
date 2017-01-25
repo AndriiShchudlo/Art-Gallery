@@ -1,20 +1,5 @@
-img {
-  position: relative;
-  min-height: 90%;
-  width: 100%;
-  -moz-transition: all 1.3s ease-out;
-  -o-transition: all 1.3s ease-out;
-  -webkit-transition: all 1.3s ease-out;
-  -webkit-filter: brightness(80%);
-}
 
-.holder {
-  position: relative;
-  height: 100%;
-  box-shadow: 10px 0px 40px 10px rgba(0, 0, 0, 0.9);
-  padding: none;
 
-}
 
 .info-block {
   font-family: "Heebo";
