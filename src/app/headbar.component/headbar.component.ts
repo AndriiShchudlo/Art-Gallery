@@ -1,8 +1,7 @@
-import { Component, OnInit, trigger, state, style, transition, animate  } from '@angular/core';
+import {Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
 import {Art} from "../object/art";
 import {ArtService} from "../service/art.service";
-import { LoginField} from "./login-field.component"
-import {ArtContainer} from "../my.flex.container/art-container.component";
+import {LoginField} from "../login-field.component/login-field.component"
 
 
 @Component({
@@ -30,18 +29,21 @@ export class HeadBarComponent implements OnInit {
   searchKeyWord: string = "";
   //apc.changeArts("")
   arts: Art[] = [];
-    toggleLoginField():void{
-        if(this.btnState === 'out') {
-          this.btnState = 'in';
-        }
-        else {
-          this.btnState = "out";
-        }
-    }
-    ngOnInit(){
 
+  toggleLoginField(): void {
+    if (this.btnState === 'out') {
+      this.btnState = 'in';
     }
-    btnSearchOnClick(){
-      this.searchService.get(this.searchKeyWord).then(search => this.arts = search);
+    else {
+      this.btnState = "out";
     }
+  }
+
+  ngOnInit() {
+    this.searchService.get().then(search => this.arts = search);
+  }
+
+  btnSearchOnClick() {
+
+  }
 }

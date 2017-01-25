@@ -9,8 +9,8 @@ export class ArtService {
   constructor(private http: Http) {
   }
 
-  get(request:string): Promise<Art[]> {
-    return this.http.get(`http://10.0.2.124:8088/${request}`)
+  get(): Promise<Art[]> {
+    return this.http.get(`http://10.0.2.124:8088/`)
       .toPromise()
       .then(response => response.json() as Art[])
   }
@@ -19,5 +19,11 @@ export class ArtService {
     return this.http.get(`http://10.0.2.124:8088/artLike?artId=${id}`)
       .toPromise()
       .then(response => response.json() as number)
+  }
+
+  findArtById(id: number): Promise<Art> {
+    return this.http.get(`http://10.0.2.124:8088/findArtById?artId=${id}`)
+      .toPromise()
+      .then(response => response.json() as Art)
   }
 }

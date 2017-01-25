@@ -7,14 +7,14 @@ import {Art} from "../object/art";
   selector: 'art-container',
   templateUrl: 'art-container.component.html',
   styleUrls: ['art-container.component.css']
-})1
+})
 
-export class ArtContainer {
+export class ArtContainer implements OnInit {
   constructor(private artService: ArtService) {
   }
   arts: Art[] = [];
 
   ngOnInit() {
-    this.artService.get('').then(arts => this.arts = arts);
+    this.artService.get().then(arts => this.arts = arts);
   }
 }
