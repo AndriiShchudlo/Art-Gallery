@@ -32,8 +32,12 @@ coments: Coments[] = [];
 
  ngOnInit(): void {
     this.comentsService.get(this.artId).then(com => this.coments = com);
-    
-  }
+      }
 
+onSubmit(form:any):void{
+console.log(form);
+this.comentsService.addComment(form);
+
+}
   
  }

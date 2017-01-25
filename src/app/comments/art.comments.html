@@ -1,16 +1,20 @@
 
         <div class="panel panel-footer" style="background: black">  
     <div class="panel body">
-                <p>
-                    <textarea placeholder = "Add a new comentar..." id="1" class="form-control"></textarea>
+       
+        <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+                   <p>
+                        <textarea placeholder = "Add a new comentar..." id="1" class="form-control" name="description" ngModel></textarea>
                    </p>
                     <div class="block1" >
-                    <button type="button" class="btn" style="width: 31%" style="color: black">Add coment</button>              
-                    <input type="text" class="form-control" style="width: 31%" placeholder="Enter your name">
-                    <input type="text" class="form-control" style="width: 31%" placeholder="Enter your email">
-                 </div>
-            </div>
-            <div class="panel body">
+                        <button type="submit" class="btn" style="width: 31%" style="color: black">Add coment</button>              
+                        <input type="text" name="name" class="form-control" style="width: 31%" placeholder="Enter your name" ngModel>
+                        <input type="text" class="form-control" style="width: 31%" placeholder="Enter your email">
+                   </div>
+        </form>
+
+    </div>
+    <div class="panel body">
               <ul *ngFor="let coments of coments"> 
                     
                   <div class="panel panel-header"> <div class="c">
@@ -20,6 +24,6 @@
                   </div></div>
                   
              </ul>        
-        </div>
+    </div>
   </div>
  
