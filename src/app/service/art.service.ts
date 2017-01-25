@@ -6,7 +6,6 @@ import {Art} from "../object/art";
 
 @Injectable()
 export class ArtService {
-
   constructor(private http: Http) {
   }
 
