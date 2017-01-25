@@ -1,3 +1,5 @@
+import {Tag} from "./tag";
+import {User} from "./user";
 export class Art {
   id: number;
   name: string
@@ -6,4 +8,7 @@ export class Art {
   dateOfCreation: string;
   imagePath: string;
   description: string;
+  tags : Tag[];
+  owner : User;
+
 }

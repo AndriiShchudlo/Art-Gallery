@@ -9,25 +9,13 @@
       <span class="glyphicon glyphicon-eye-open view_style" aria-hidden="true">{{art.views}}</span>
     </div>
     <div class="center-info">
+      <div class="my-flex-block">
+        <a href="#" class="tag" *ngFor="let tag of art.tags">{{tag.name}}</a>
+      </div>
+      <div class="side">
+        {{art.owner.userName}}
 
-      <a href="#" class="tag">classic</a>
-      <a href="#" class="tag">new</a>
-      <a href="#" class="tag">riverside</a>
-      <a href="#" class="tag">age</a>
-      <a href="#" class="tag">impro</a>
-      <a href="#" class="tag">rock</a>
-      <a href="#" class="tag">sun</a>
-
-      <a href="#" class="tag">impro</a>
-      <a href="#" class="tag">rock</a>
-      <a href="#" class="tag">sun</a>
-      <a href="#" class="tag">mountain</a>
-      <a href="#" class="tag">lviv</a>
-    </div>
-    <div class="side">
-      John Doe
-      <br>
-      {{art.dateOfCreation}}
+        {{art.dateOfCreation}}
+      </div>
     </div>
   </div>
-</div>

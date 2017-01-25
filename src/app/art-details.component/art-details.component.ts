@@ -1,5 +1,5 @@
-import {Component,OnInit, Input} from "@angular/core";
-import {ActivatedRoute, Params,Router} from "@angular/router";
+import {Component, OnInit, Input} from "@angular/core";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Location} from "@angular/common";
 import {ArtService} from "../service/art.service";
 
@@ -12,26 +12,19 @@ import {Art} from "../object/art";
   templateUrl: './art-detail.component.html'
 })
 export class ArtDetailComponent implements OnInit {
-  
-  art: Art;
 
-  id : number;
+  art: Art;
 
   constructor(private route: ActivatedRoute,
               private location: Location,
-              private router: Router,private artService : ArtService) {
+              private router: Router, private artService: ArtService) {
   }
-  ngOnInit():void{
 
-this.route.params
-    .switchMap((params: Params) => this.artService.findArtById(+params['artId']))
-    .subscribe(art => this.art = art);
-
-}
-   
-
-
-
+  ngOnInit(): void {
+    this.route.params
+      .switchMap((params: Params) => this.artService.findArtById(+params['artId']))
+      .subscribe(art => this.art = art);
+  }
 }
 
 
