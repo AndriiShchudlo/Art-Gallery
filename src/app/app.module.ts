@@ -6,12 +6,12 @@ import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component/app.component';
 import {ArtService} from './service/art.service'
 import {ArtComponent} from "./art.component/art.component";
-import {ArtDetailComponent} from "./art-details/art-details.component";
+import {ArtDetailComponent} from "./art-details.component/art-details.component";
 import {RouterModule} from "@angular/router";
-import {ArtContainer} from "./art.container/art-container.component";
+import {ArtContainer} from "./art-container.component/art-container.component";
 import {HeadBarComponent} from './headbar.component/headbar.component'
-import {LoginField} from "./headbar.component/login-field.component";
-import {HomeComponent} from "./home/home.component";
+import {LoginField} from "./login-field.component/login-field.component";
+import {HomeComponent} from "./home.component/home.component";
 
 @NgModule({
   imports: [
@@ -30,7 +30,7 @@ import {HomeComponent} from "./home/home.component";
     ])
   ],
   declarations: [
-    AppComponent, ArtComponent, ArtContainer,ArtDetailComponent, HeadBarComponent, LoginField
+    AppComponent, ArtComponent, ArtContainer, ArtDetailComponent, HeadBarComponent, LoginField,HomeComponent
   ],
   providers: [ArtService],
   bootstrap: [AppComponent]
