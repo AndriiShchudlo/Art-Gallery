@@ -6,6 +6,7 @@ body{
 }
 
 .header-group {
+  z-index: 200;
     margin: auto;
     height: 80px;
     width: 100%;

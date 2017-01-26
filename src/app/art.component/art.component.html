@@ -1,21 +1,22 @@
 <div class="block">
-  <div class="side">
-    <span id="sss" (click)="addLike()" class="glyphicon glyphicon-heart like_style"
-          aria-hidden="true">{{art.likes}}</span>
-    <br>
-    <span class="glyphicon glyphicon-eye-open view_style" aria-hidden="true">{{art.views}}</span>
-  </div>
-  <div class="center-info">
+         <div class="left-side">
+             <span id="sss" (click)="addLike()" class="glyphicon glyphicon-heart like_style"
+              aria-hidden="true">{{art.likes}}</span>
+             <br/>
+               <span class="glyphicon glyphicon-eye-open view_style" aria-hidden="true">{{art.views}}</span>
+         </div>
 
 
-    <div class="center-info">
-      <div class="my-flex-block">
-        <a href="#" class="tag" *ngFor="let tag of art.tags">{{tag.name}}</a>
-      </div>
-      <div class="side">
-        {{art.owner.userName}}
+          <div class="center-info">
 
-        {{art.dateOfCreation}}
-      </div>
-    </div>
-  </div>
+                 <a href="#" class="tag" *ngFor="let tag of art.tags">{{tag.name}}</a>
+
+          </div>
+
+          <div class="right-side">
+            {{art.owner.userName}}
+
+            {{art.dateOfCreation}}
+          </div>
+
+</div>

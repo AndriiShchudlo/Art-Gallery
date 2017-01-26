@@ -1,6 +1,7 @@
 import {Injectable}   from '@angular/core'
 import {Http, Response} from '@angular/http'
 
+
 import 'rxjs/add/operator/toPromise';
 import {Art} from "../object/art";
 import {Tag} from "../object/tag";
@@ -33,7 +34,7 @@ export class ArtService {
   }
 
   getAllTags(): Promise<Tag[]> {
-    return this.http.get(`http://10.0.2.119:8080/allTags`).toPromise().then(response => response.json() as Tag[])
+    return this.http.get(`http://10.0.2.124:8088/getAllTags`).toPromise().then(response => response.json() as Tag[])
 
   }
 
