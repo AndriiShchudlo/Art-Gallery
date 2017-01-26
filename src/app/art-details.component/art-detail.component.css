@@ -1,4 +1,15 @@
-.information_panel{
+#main {
+    width: 100%;
+    height: 20%;
+    
+    display: -webkit-flex; /* Safari */
     display: flex;
-    flex-direction: row
 }
+
+
+/* Standard syntax */
+#main div:nth-of-type(1) {flex-grow: 1;}
+#main div:nth-of-type(2) {flex-grow: 3;}
+#main div:nth-of-type(3) {flex-grow: 1;}
+#main div:nth-of-type(4) {flex-grow: 1;}
+#main div:nth-of-type(5) {flex-grow: 1;}
