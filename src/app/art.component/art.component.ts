@@ -20,7 +20,7 @@ export class ArtComponent {
     if (this.isLiked) return;
     this.isLiked = true;
     this.artService.artLike(this.art.id).then(likes => this.art.likes = likes);
-  }
+  }  
 }
 
 

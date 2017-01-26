@@ -2,6 +2,7 @@ import {Component, OnInit, trigger, state, style, transition, animate} from '@an
 import {Art} from "../object/art";
 import {ArtService} from "../service/art.service";
 import {LoginField} from "../login-field.component/login-field.component"
+import {ArtContainer} from "../art-container.component/art-container.component"
 
 @Component({
   selector: 'headbar',
@@ -23,7 +24,8 @@ import {LoginField} from "../login-field.component/login-field.component"
 })
 
 export class HeadBarComponent implements OnInit {
-  constructor(private searchService: ArtService) {
+  constructor(private searchService: ArtService,
+  private artContainer :ArtContainer) {
   }
 
   btnState: string = 'out';
@@ -45,6 +47,7 @@ export class HeadBarComponent implements OnInit {
   }
 
   btnSearchOnClick() {
-
+    this.searchService.findByName(this.searchKeyWord).then(search =>this.arts = search)
   }
+  
 }

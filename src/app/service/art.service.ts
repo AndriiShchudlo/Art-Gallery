@@ -3,6 +3,7 @@ import {Http, Response} from '@angular/http'
 
 import 'rxjs/add/operator/toPromise';
 import {Art} from "../object/art";
+import {Tag} from "../object/tag";
 
 @Injectable()
 export class ArtService {
@@ -21,6 +22,21 @@ export class ArtService {
       .then(response => response.json() as number)
   }
 
+  findByName(name: string): Promise<Art[]> {
+    return this.http.get(`http://10.0.2.124:8088/findByName?artName=${name}`)
+      .toPromise().then(response => response.json() as Art[])
+  }
+
+  findByTagName(tagName: string): Promise<Art[]> {
+    return this.http.get(`http://10.0.2.124:8088/findByTagName?tagName=${tagName}`)
+      .toPromise().then(response => response.json() as Art[])
+  }
+
+  getAllTags(): Promise<Tag[]> {
+    return this.http.get(`http://10.0.2.119:8080/allTags`).toPromise().then(response => response.json() as Tag[])
+
+  }
+
   findArtById(id: number): Promise<Art> {
     return this.http.get(`http://10.0.2.124:8088/findArtById?artId=${id}`)
       .toPromise()
@@ -30,6 +46,6 @@ export class ArtService {
   addView(id: number): Promise<number> {
     return this.http.get(`http://10.0.2.124:8088/art/addView?artId=${id}`)
       .toPromise()
-      .then(response => response.json() as Art)
+      .then(response => response.json() as number)
   }
 }
