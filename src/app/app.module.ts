@@ -12,7 +12,10 @@ import {ArtContainer} from "./art-container.component/art-container.component";
 import {HeadBarComponent} from './headbar.component/headbar.component'
 import {LoginField} from "./login-field.component/login-field.component";
 import {HomeComponent} from "./home.component/home.component";
-import {ArtObserver} from './service/art.observer'
+import {Footer} from "./footer.component/footer.component";
+import {RightSlide} from "./right-slide.component/right-slide.component"
+import {ArtComments} from './comments/art.comments';
+import {ComentsService} from './service/comment.service';
 
 @NgModule({
   imports: [
@@ -29,16 +32,17 @@ import {ArtObserver} from './service/art.observer'
         component: HomeComponent
       },
       {
-      path: '',
-      redirectTo: '/home',
-      pathMatch: 'full'
-    }
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      }
     ])
   ],
   declarations: [
-    AppComponent, ArtComponent, ArtContainer, ArtDetailComponent, HeadBarComponent, LoginField, HomeComponent, ArtObserver
+    AppComponent, ArtComponent, ArtContainer, ArtDetailComponent,
+    HeadBarComponent, LoginField, HomeComponent, ArtComments, Footer, RightSlide
   ],
-  providers: [ArtService],
+  providers: [ArtService, ArtContainer, ComentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

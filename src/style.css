@@ -8,7 +8,7 @@ body{
 
 .picture-container{
     position: relative;
-    margin-top:50px;
+    /*margin-top:50px;*/
 
     display:flex;
     flex-direction: column;
@@ -16,7 +16,7 @@ body{
     color:white;
     align-content:space-around;
 
-    background-image:    url(http://www.walldevil.com/wallpapers/a76/background-texture-light-pattern-black-wallpapers.jpg);
+    /*background-image:    url(http://www.walldevil.com/wallpapers/a76/background-texture-light-pattern-black-wallpapers.jpg); */
     text-align: center;
 
 
@@ -34,7 +34,7 @@ body{
 
 
     max-width: 60%;
-      margin-top: 30px;
+      /*margin-top: 30px;*/
 
     vertical-align: text-top;
 
@@ -142,23 +142,8 @@ body{
 .holder:hover .block{
     top:80%;
 
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 a.tag {
@@ -187,15 +172,3 @@ a.tag:active{
     padding:1px 9px;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-

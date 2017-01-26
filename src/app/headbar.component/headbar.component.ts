@@ -4,7 +4,6 @@ import {ArtService} from "../service/art.service";
 import {LoginField} from "../login-field.component/login-field.component"
 import {ArtContainer} from "../art-container.component/art-container.component";
 
-
 @Component({
   selector: 'headbar',
   templateUrl: './headbar.component.html',
@@ -25,8 +24,11 @@ import {ArtContainer} from "../art-container.component/art-container.component";
 })
 
 export class HeadBarComponent implements OnInit {
-  constructor (private searchService: ArtService) {  }
-  btnState:string = 'out';
+  constructor(private searchService: ArtService,
+  private artContainer :ArtContainer) {
+  }
+
+  btnState: string = 'out';
   searchKeyWord: string = "";
   //apc.changeArts("")
   arts: Art[] = [];
@@ -48,4 +50,5 @@ export class HeadBarComponent implements OnInit {
   btnSearchOnClick() {
     this.searchService.findArtByName(this.searchKeyWord).then(search => this.arts = search);
   }
+
 }

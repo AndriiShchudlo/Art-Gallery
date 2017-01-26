@@ -22,4 +22,7 @@ export class ArtContainer implements OnInit  {
   show(arts:Art[]){
     this.arts = arts;
   }
+  findByName(arts) {
+    this.arts=arts;
+  }
 }
