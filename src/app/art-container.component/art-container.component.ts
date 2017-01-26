@@ -20,4 +20,7 @@ export class ArtContainer implements OnInit {
   ngOnInit() {
     this.artService.get().then(arts => this.arts = arts);
   }
+  findByName(arts) {
+    this.arts=arts;
+  }
 }
