@@ -33,6 +33,7 @@ export class ArtComments implements OnInit {
 
   @Input()
   artId: number;
+
 // coments = COMENTS;
   coments: Coments[] = [];
 
@@ -45,7 +46,7 @@ export class ArtComments implements OnInit {
 
   onSubmit(form: any): void {
     console.log(form);
-    this.comentsService.addComment(form);
+    this.comentsService.addComment(form,this.artId);
 
   }
 

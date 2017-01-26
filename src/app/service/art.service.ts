@@ -30,6 +30,6 @@ export class ArtService {
   addView(id: number): Promise<number> {
     return this.http.get(`http://10.0.2.124:8088/art/addView?artId=${id}`)
       .toPromise()
-      .then(response => response.json() as Art)
+      .then(response => response.json() as number)
   }
 }
