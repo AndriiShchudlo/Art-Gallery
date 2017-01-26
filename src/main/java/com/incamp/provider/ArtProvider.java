@@ -16,4 +16,5 @@ public interface ArtProvider extends JpaRepository<Art, Integer> {
     @Query("Select c from Art c join fetch c.owner u  where u.userName = ?1 or u.lastName = ?1 or u.firstName = ?1 ")
     List<Art> findByOwner(String search);
 
+    List<Art> findByName(String artName);
 }

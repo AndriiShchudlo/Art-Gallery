@@ -10,4 +10,5 @@ public interface ArtService {
 
     List<Art> findByOwner(String search);
 
+    List<Art> findByName(String artName);
 }

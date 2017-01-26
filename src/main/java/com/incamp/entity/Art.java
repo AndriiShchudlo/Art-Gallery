@@ -23,7 +23,7 @@ public class Art {
     private String imagePath;
     private String description;
 
-    @OneToMany(mappedBy = "art", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "art")
     @JsonIgnore
     private List<Comment> comments;
 
@@ -33,7 +33,7 @@ public class Art {
             inverseJoinColumns = @JoinColumn(name = "tag_id"))
     private List<Tag> tags;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "user_id")
     private User owner;
 

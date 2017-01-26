@@ -23,4 +23,9 @@ public class ArtImpl implements ArtService {
     public List<Art> findByOwner(String search) {
         return artProvider.findByOwner(search);
     }
+
+    @Override
+    public List<Art> findByName(String artName) {
+        return artProvider.findByName(artName);
+    }
 }

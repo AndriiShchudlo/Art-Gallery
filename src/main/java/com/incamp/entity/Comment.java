@@ -14,7 +14,7 @@ public class Comment {
     private String commentMessage;
     private String dateOfCreation;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JsonIgnore
     @JoinColumn(name = "art_id")
     protected Art art;

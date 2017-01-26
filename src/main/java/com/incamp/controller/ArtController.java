@@ -11,31 +11,24 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class ArtController {
 
     @Autowired
-    private ArtService service;
+    private ArtService artService;
 
     @RequestMapping(value = "/")
     public List<Art> findForHomePage(HttpServletResponse resp) {
-        resp.setHeader("Access-Control-Allow-Origin", "*");
-        return service.findForHomePage();
+        return artService.findForHomePage();
     }
 
-    @RequestMapping(value = "/findByOwner")
+    @RequestMapping(value = "/findByOwner", method = RequestMethod.GET)
     public List<Art> findByOwner(HttpServletResponse resp, @RequestParam String search) {
-        resp.setHeader("Access-Control-Allow-Origin", "*");
-        return service.findByOwner(search);
+        return artService.findByOwner(search);
     }
 
-        @RequestMapping(value = "/findByTags",method = RequestMethod.POST)
-    public  List<Integer> findByTags(HttpServletResponse resp, @RequestParam String tagIds) {
-            JSONObject obj = new JSONObject(tagIds);
-            String d = obj.getString("tagIds");
-            System.out.println(tagIds+d+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!@##################");
-        resp.setHeader("Access-Control-Allow-Origin", "*");
-        return null;
-
+    @RequestMapping(path = "/findByName", method = RequestMethod.GET)
+    public List<Art> findArtByName(@RequestParam("artName") String artName) {
+        return artService.findByName(artName);
     }
-
 }
