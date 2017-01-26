@@ -1,0 +1,4 @@
+.information_panel{
+    display: flex;
+    flex-direction: row
+}
