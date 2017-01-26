@@ -2,6 +2,7 @@ import {Component, OnInit, trigger, state, style, transition, animate} from '@an
 import {Art} from "../object/art";
 import {ArtService} from "../service/art.service";
 import {LoginField} from "../login-field.component/login-field.component"
+import {ArtContainer} from "../art-container.component/art-container.component";
 
 
 @Component({
@@ -24,7 +25,7 @@ import {LoginField} from "../login-field.component/login-field.component"
 })
 
 export class HeadBarComponent implements OnInit {
-  constructor (private searchService: ArtService, artCont:ArtContainer) {  }
+  constructor (private searchService: ArtService) {  }
   btnState:string = 'out';
   searchKeyWord: string = "";
   //apc.changeArts("")
@@ -41,9 +42,10 @@ export class HeadBarComponent implements OnInit {
 
   ngOnInit() {
     this.searchService.get().then(search => this.arts = search);
+    //this.searchService.get().then(search => console.log(search));
   }
 
   btnSearchOnClick() {
-
+    this.searchService.findArtByName(this.searchKeyWord).then(search => this.arts = search);
   }
 }

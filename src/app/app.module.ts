@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-
+import {Observable} from 'rxjs/Observable'
 import {AppComponent} from './app.component/app.component';
 import {ArtService} from './service/art.service'
 import {ArtComponent} from "./art.component/art.component";
@@ -12,6 +12,7 @@ import {ArtContainer} from "./art-container.component/art-container.component";
 import {HeadBarComponent} from './headbar.component/headbar.component'
 import {LoginField} from "./login-field.component/login-field.component";
 import {HomeComponent} from "./home.component/home.component";
+import {ArtObserver} from './service/art.observer'
 
 @NgModule({
   imports: [
@@ -35,10 +36,11 @@ import {HomeComponent} from "./home.component/home.component";
     ])
   ],
   declarations: [
-    AppComponent, ArtComponent, ArtContainer, ArtDetailComponent, HeadBarComponent, LoginField,HomeComponent
+    AppComponent, ArtComponent, ArtContainer, ArtDetailComponent, HeadBarComponent, LoginField, HomeComponent, ArtObserver
   ],
-  providers: [ArtService, ArtContainer],
+  providers: [ArtService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {ArtService} from "../service/art.service";
 import {Art} from "../object/art";
+import {Observable} from "rxjs";
 
 @Component({
   moduleId: module.id,
@@ -9,12 +10,16 @@ import {Art} from "../object/art";
   styleUrls: ['art-container.component.css']
 })
 
-export class ArtContainer implements OnInit {
-  constructor(private artService: ArtService) {
-  }
-  arts: Art[] = [];
+export class ArtContainer implements OnInit  {
+
+  constructor (artService: ArtService){  }
+
+  arts: Observable<Art[]>;
 
   ngOnInit() {
-    this.artService.get().then(arts => this.arts = arts);
+    this.arts.subscribe(() => this.arts= this.artService.artSubj);
+  }
+  show(arts:Art[]){
+    this.arts = arts;
   }
 }
