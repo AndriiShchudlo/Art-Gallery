@@ -31,4 +31,9 @@ public class ArtController {
     public List<Art> findArtByName(@RequestParam("artName") String artName) {
         return artService.findByName(artName);
     }
+
+    @RequestMapping(path = "/findByTagName", method = RequestMethod.GET)
+    public List<Art> findByTag(@RequestParam("tagName") String tagName) {
+        return artService.findByTag(tagName);
+    }
 }

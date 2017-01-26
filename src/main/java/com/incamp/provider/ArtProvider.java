@@ -17,4 +17,7 @@ public interface ArtProvider extends JpaRepository<Art, Integer> {
     List<Art> findByOwner(String search);
 
     List<Art> findByName(String artName);
+
+    @Query("select a from Art a join fetch a.tags t1 where (select t2 from Tag t2 where t2.name = ?1) member of t1")
+    List<Art> findByTag(String tagName);
 }

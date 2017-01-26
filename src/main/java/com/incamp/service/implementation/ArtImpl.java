@@ -28,4 +28,10 @@ public class ArtImpl implements ArtService {
     public List<Art> findByName(String artName) {
         return artProvider.findByName(artName);
     }
+
+    @Override
+    public List<Art> findByTag(String tagName) {
+        return artProvider.findByTag(tagName);
+    }
 }
+
