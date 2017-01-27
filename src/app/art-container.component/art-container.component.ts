@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
-import {ArtService} from "../service/art.service";
 import {Art} from "../object/art";
+import {ArtObserver} from "../service/art-resources.service";
+import {ArtService} from "../service/art.service";
 
 @Component({
-
   moduleId: module.id,
   selector: 'art-container',
   templateUrl: 'art-container.component.html',
@@ -12,15 +12,14 @@ import {Art} from "../object/art";
 
 export class ArtContainer implements OnInit {
 
-  constructor(private artService: ArtService) {
+  constructor(private  artObserver: ArtObserver,
+              private artService: ArtService) {
   }
 
   arts: Art[] = [];
 
   ngOnInit() {
-    this.artService.get().then(arts => this.arts = arts);
-  }
-  findByName(arts) {
-    this.arts=arts;
+    this.artService.getArtsForHomePage().subscribe(res => this.artObserver.next(res))
+    this.artObserver.subscribe(arts => this.arts = arts);
   }
 }

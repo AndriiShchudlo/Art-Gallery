@@ -1,9 +1,7 @@
-import {Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
-import {Art} from "../object/art";
+import {Component, trigger, state, style, transition, animate} from '@angular/core';
 import {ArtService} from "../service/art.service";
-import {LoginField} from "../login-field.component/login-field.component"
-import {ArtContainer} from "../art-container.component/art-container.component"
-
+import {ArtObserver} from "../service/art-resources.service";
+import 'rxjs/Rx';
 @Component({
   selector: 'headbar',
   templateUrl: './headbar.component.html',
@@ -23,15 +21,33 @@ import {ArtContainer} from "../art-container.component/art-container.component"
     ])]
 })
 
-export class HeadBarComponent implements OnInit {
-  constructor(private searchService: ArtService,
-  private artContainer :ArtContainer) {
+export class HeadBarComponent {
+  constructor(private artService: ArtService,
+              private artObserver: ArtObserver) {
   }
 
   btnState: string = 'out';
   searchKeyWord: string = "";
-  //apc.changeArts("")
-  arts: Art[] = [];
+  isSearchResultEmpty: boolean = false;
+
+  search() {
+    this.artService.findArtByName(this.searchKeyWord).subscribe(res => {
+      this.artObserver.next(res);
+      console.log(res.length==0);
+      (res.length==0) ? this.isSearchResultEmpty = true : this.isSearchResultEmpty = false;
+    })
+  }
+
+  searchInputKeyUp(){
+    if (this.isSearchInputEmpty()){
+      this.artService.getArtsForHomePage().subscribe(res => this.artObserver.next(res));
+      this.isSearchResultEmpty = false;
+    }
+  }
+
+  isSearchInputEmpty():boolean{
+    if (this.searchKeyWord==="") return true;
+  }
 
   toggleLoginField(): void {
     if (this.btnState === 'out') {
@@ -41,13 +57,4 @@ export class HeadBarComponent implements OnInit {
       this.btnState = "out";
     }
   }
-
-  ngOnInit() {
-    this.searchService.get().then(search => this.arts = search);
-  }
-
-  btnSearchOnClick() {
-    this.searchService.findByName(this.searchKeyWord).then(search =>this.arts = search)
-  }
-  
 }
