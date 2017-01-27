@@ -26,6 +26,7 @@ body{
 }
 
 .no-search-results{
+    color: white;
   font-size: 30px;
   text-align: center;
   padding-top: 180px;
