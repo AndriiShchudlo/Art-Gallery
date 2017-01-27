@@ -1,0 +1,24 @@
+
+.horizontal-container{
+  display:flex;
+  flex-direction:row;
+  color:white;
+}
+
+.mini-image{
+  padding: 40px;
+  width:50%;
+
+}
+
+.mini-image img{
+  width: 100%;
+}
+
+textarea{
+  width:100%;
+  color:black;
+}
+form input{
+  color:black;
+}

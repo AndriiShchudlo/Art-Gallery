@@ -4,7 +4,12 @@
 body{
     background-color: #F5EFE6
 }
+.logo-group{
+  color:white;
+  width:65%;
 
+
+}
 .header-group {
   z-index: 200;
     margin: auto;
@@ -14,8 +19,8 @@ body{
     align-items: center;
    -webkit-flex-direction: row;
    flex-direction: row;
-   -webkit-justify-content: flex-end;
-   justify-content: flex-end;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
    border-top-left-radius: 0;
    border-top-right-radius: 0;
    font-style: bold;
@@ -24,4 +29,12 @@ body{
 
 .searching-group {
     margin-right: 10px;
+}
+
+.logo-group a{
+  color:white;
+}
+.logo-group a:hover{
+  color:white;
+  text-decoration:none;
 }

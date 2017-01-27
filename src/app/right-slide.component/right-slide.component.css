@@ -1,6 +1,7 @@
 
 
 #s-panel{
+
     position: fixed;
 
     background: linear-gradient( 0deg, rgba( 0,0,0,0.8), rgba( 10,10,10,0.9));

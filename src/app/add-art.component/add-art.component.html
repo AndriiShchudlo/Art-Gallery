@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel = "stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Heebo:300|Hind+Vadodara|Amatic+SC| Poiret+One|Quicksand|Raleway:100|Yantramanav:100" rel="stylesheet">
+  <title>ArtGallery</title>
+</head>
+<body>
+<form #f = "ngForm" (ngSubmit)="onSubmit(f.value)">
+  <div class = "horizontal-container">
+
+
+    <div class="mini-image">
+      <*ngIf>
+      <img src="https://static.pexels.com/photos/3247/nature-forest-industry-rails.jpg" >
+
+    </div>
+
+    <div class="input-form">
+      <b>Your name</b>
+      <br>
+      <input type="text" name ="owner" size="40" ngModel>
+      <br>
+
+      <b>Name of art</b><br>
+      <input type="text" name="imagePath" size="40" ngModel>
+      <br>
+
+      <b>Source</b><br>
+      <input type="text" name ="tags" size="40">
+      <br>
+      <b>Description</b><br>
+      <textarea name="comment" cols="40" rows="3" ngModel></textarea>
+      <br>
+      <input type="submit" value="Send">
+
+    </div>
+
+
+  </div>
+
+  </form>
+
+
+</body>
+</html>

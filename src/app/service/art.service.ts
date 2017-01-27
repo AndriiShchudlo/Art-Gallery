@@ -49,4 +49,9 @@ export class ArtService {
       .toPromise()
       .then(response => response.json() as number)
   }
+  addArt(art:any): Promise<Art>{
+  return this.http.post(`http://10.0.2.124:8088/addNewArt`, art).
+  toPromise().
+  then(response => response.json() as Art)
+  }
 }
