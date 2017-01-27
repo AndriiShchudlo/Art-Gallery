@@ -3,12 +3,12 @@
 
     <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
       <p>
-        <textarea placeholder="Add a new comentar..." id="1" class="form-control" name="commentMessage" ngModel></textarea>
+        <textarea id="ent_comment" placeholder="Add a new comentar..." id="1" class="form-control" name="commentMessage" ngModel></textarea>
       </p>
       <div class="block1">
-        <button type="submit"  class="btn" style="width: 31%" style="color: black">Add coment</button>
-        <input type="text" name="author" class="form-control" style="width: 31%" placeholder="Enter your name" ngModel>
-        <input type="text"  class="form-control" style="width: 31%" placeholder="Enter your email">
+        <button type="submit" class="btn" style="width: 31%" style="color: black">Add coment</button>
+        <input id="ent_name" type="text" name="author" class="form-control" style="width: 31%" placeholder="Enter your name" ngModel>
+        <input id="ent_email" type="text"  class="form-control" style="width: 31%" placeholder="Enter your email">
  
         
       </div>
