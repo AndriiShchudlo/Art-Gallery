@@ -13,7 +13,7 @@ export class ArtService {
   }
 
   getArtsForHomePage(): Observable<Art[]> {
-    return this.http.get(`http://localhost:8088/`)
+    return this.http.get(`http://10.0.2.124:8088/`)
       .map(response => response.json() as Art[]);
   }
 
@@ -24,7 +24,7 @@ export class ArtService {
   }
 
   findArtByName(name: string): Observable<Art[]> {
-    return this.http.get(`http://localhost:8088/findArtByName?artName=${name}`)
+    return this.http.get(`http://10.0.2.124:8088/findArtByName?artName=${name}`)
       .map(response => response.json() as Art[]);
   }
 
@@ -34,7 +34,7 @@ export class ArtService {
   }
 
   getAllTags(): Promise<Tag[]> {
-    return this.http.get(`http://localhost:8088/getAllTags`).toPromise().then(response => response.json() as Tag[])
+    return this.http.get(`http://10.0.2.124:8088/getAllTags`).toPromise().then(response => response.json() as Tag[])
 
   }
 

@@ -1,14 +1,12 @@
 .my-flex-container {
   font-family: "Heebo";
-
   display: flex;
   flex-direction: row !important;
   flex-wrap: wrap;
-
+  min-height: 100%;
 }
 
 .my-flex-block {
-
   box-shadow: 10px 10px 40px 10px rgba(0, 0, 0, 0.9);
   max-width: 33.33%;
   overflow: hidden;

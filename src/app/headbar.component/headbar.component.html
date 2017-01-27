@@ -1,6 +1,6 @@
 <div class="header-group navbar navbar-inverse navbar-form">
   <div class="searching-group" aria-label="...">
-    <input [(ngModel)]="searchKeyword" type="text" class="form-control" placeholder="Search">
+    <input [(ngModel)]="searchKeyWord" (keyup)="searchInputKeyUp()" type="text" class="form-control" placeholder="Search">
     <button (click)="search()" type="button" class="btn">Search</button>
   </div>
   <log-field [@slideInOut]="btnState"></log-field>
@@ -8,4 +8,7 @@
     <button (click)="toggleLoginField()" type="button" class="btn">Log in</button>
     <button type="button" class="btn">Sign up</button>
   </div>
+</div>
+<div class="no-search-results" *ngIf="isSearchResultEmpty">
+  There no results found up to this search
 </div>

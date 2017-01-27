@@ -24,3 +24,11 @@ body{
 .searching-group {
     margin-right: 10px;
 }
+
+.no-search-results{
+  font-size: 30px;
+  text-align: center;
+  padding-top: 180px;
+  height: 37em;
+  max-height: 403px;
+}
