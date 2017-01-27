@@ -16,9 +16,11 @@ export class ComentsService {
       .then(response => response.json() as Coments[]);
   }
 
-  addComment(Coments: any, artId:number) {
+  addComment(Coments: any, artId:number) : Promise<Coments>{
 
-    this.http.post(`http://10.0.2.124:8088/addComment/artId/${artId}`, JSON.stringify(Comment)).subscribe();
-  }
+   return this.http.post(`http://10.0.2.124:8088/addComment/artId/${artId}`, JSON.stringify(Comment))
+     .toPromise()
+     .then(response => response.json() as Coments);
+ }
 
 }
