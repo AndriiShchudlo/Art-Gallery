@@ -4,4 +4,7 @@ export class User {
   firstName: string
   lastName: string
   email: string
+constructor(userName:string){
+  this.userName=userName;
+}
 }

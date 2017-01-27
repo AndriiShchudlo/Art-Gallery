@@ -8,9 +8,9 @@
     box-shadow:  -8px 9px 5px 0px rgba(0,0,0,0.75);
     z-index:5;
     top: 30%;
-    right: -180px;
-    width: 230px;
-    height: 65%;
+    right: -130px;
+    width: 160px;
+    height: 280px;
     float: left;
     color:azure;
 
@@ -40,9 +40,9 @@
     justify-content: space-around;
     align-content: center;
 }
-a.tag {
+button.tag {
     font-size: 12px;
-
+  border:none;
     text-decoration: none;
     color: white;
     margin:2px;
@@ -51,15 +51,15 @@ a.tag {
     padding:0px 9px;
 
 }
-a.tag:hover {
-    font-weight: 800;
-    font-size: 12px;
+button.tag:hover {
+    /*font-weight: 800;*/
+    /*font-size: 11px;*/
     color: aliceblue;
     background: linear-gradient( 0deg, rgba( 220, 0, 0,0.7), rgba( 257, 0, 0,0.9));
     padding:0px 9px;
 
 }
-a.tag:active{
+button.tag:active{
     margin:2px;
     background: linear-gradient( 0deg, rgba( 250, 0, 0,0.7), rgba( 50, 0, 0,0.9));
     padding:1px 9px;

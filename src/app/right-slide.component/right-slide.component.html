@@ -5,7 +5,7 @@
 <div id="s-panel">
            <div class= "tag-container" >
 
-        <a href="#" class="tag" *ngFor="let tag of tags">{{tag.name}}</a>
+        <button (click)="searchForTag(tag.id)" href="#" class="tag" *ngFor="let tag of tags">{{tag.name}}</button>
 
            </div>
 

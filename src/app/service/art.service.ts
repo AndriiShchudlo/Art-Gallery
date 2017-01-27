@@ -14,7 +14,7 @@ export class ArtService {
   }
 
   getArtsForHomePage(): Observable<Art[]> {
-    return this.http.get(`http://localhost:8088/`)
+    return this.http.get(`http://10.0.2.124:8088/`)
       .map(response => response.json() as Art[]);
   }
 
@@ -25,13 +25,13 @@ export class ArtService {
   }
 
   findArtByName(name: string): Observable<Art[]> {
-    return this.http.get(`http://localhost:8088/findArtByName?artName=${name}`)
+    return this.http.get(`http://10.0.2.124:8088/findArtByName?artName=${name}`)
       .map(response => response.json() as Art[]);
   }
 
-  findByTagName(tagName: string): Promise<Art[]> {
-    return this.http.get(`http://10.0.2.124:8088/findByTagName?tagName=${tagName}`)
-      .toPromise().then(response => response.json() as Art[])
+  findByTagId(tagId: number): Observable<Art[]> {
+    return this.http.get(`http://10.0.2.124:8088/arts/findByTagId?tagId=${tagId}`)
+      .map(response => response.json() as Art[])
   }
 
   getAllTags(): Promise<Tag[]> {
@@ -52,9 +52,9 @@ export class ArtService {
       .toPromise()
       .then(response => response.json() as number)
   }
-  addArt(art:any): Promise<Art>{
-  return this.http.post(`http://10.0.2.124:8088/addNewArt`, art).
-  toPromise().
-  then(response => response.json() as Art)
+
+  addArt(art:Art):void {
+   this.http.post(`http://10.0.2.124:8088/addNewArt`, art).subscribe();
+
   }
 }

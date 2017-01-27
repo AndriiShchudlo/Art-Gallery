@@ -4,15 +4,17 @@
 
     </div>
   <div class="add-art-link ">
-    <a [routerLink]="['/add-art']">Add Image</a>>
+    <button type="button" class="btn" [routerLink]="['/add-art']">Add Image</button>
     </div>
   <div class="searching-group" aria-label="...">
     <input [(ngModel)]="searchKeyword" type="text" class="form-control" placeholder="Search">
     <button (click)="search()" type="button" class="btn">Search</button>
   </div>
+  <div class = "sign">
   <log-field [@slideInOut]="btnState"></log-field>
   <div class="btn-group logging-group" role="group" aria-label="...">
     <button (click)="toggleLoginField()" type="button" class="btn">Log in</button>
     <button type="button" class="btn">Sign up</button>
   </div>
+    </div>
 </div>

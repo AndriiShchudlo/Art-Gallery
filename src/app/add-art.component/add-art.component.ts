@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ArtService} from "../service/art.service";
 import {Art} from "../object/art";
+import {User} from "../object/user";
 
 
 @Component({
@@ -12,13 +13,16 @@ import {Art} from "../object/art";
 
 
 export class AddArtComponent {
-art: Art;
+
+
 
   constructor(private artService: ArtService) {
   }
 
-  onSubmit(form: any): void {
-    this.artService.addArt(form);
+addArt(owner:string, name:string, imagePath:string, description:string ): void {
+    var user :User = new User(owner);
+    var art : Art = new Art(name, imagePath, description);
+  this.artService.addArt(art);
   }
 
 }

@@ -2,7 +2,9 @@
 .horizontal-container{
   display:flex;
   flex-direction:row;
-  color:white;
+  color:black;
+  background: black;
+  padding: 20px;
 }
 
 .mini-image{
@@ -10,7 +12,9 @@
   width:50%;
 
 }
-
+.input-form{
+  padding: 30px;
+}
 .mini-image img{
   width: 100%;
 }
