@@ -44,6 +44,7 @@ body{
   color:white;
   text-decoration:none;
 }
+
 .sign{
 
   min-width: 150px;
@@ -60,3 +61,11 @@ body{
 
 
 
+.no-search-results{
+  font-size: 30px;
+  text-align: center;
+  padding-top: 180px;
+  height: 37em;
+  max-height: 403px;
+}
+ 

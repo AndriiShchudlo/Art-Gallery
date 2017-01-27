@@ -22,5 +22,4 @@ export class ArtContainer implements OnInit {
     this.artService.getArtsForHomePage().subscribe(res => this.artObserver.next(res))
     this.artObserver.subscribe(arts => this.arts = arts);
   }
-
 }

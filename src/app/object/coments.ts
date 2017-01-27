@@ -4,4 +4,8 @@ export class Coments {
   commentMessage: string;
   dateOfCreation: string;
 
+  constructor(author:string, commentMessage:string) {
+    this.author = author;
+    this.commentMessage = commentMessage;
+  }
 }

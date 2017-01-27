@@ -27,10 +27,26 @@ export class HeadBarComponent {
   }
 
   btnState: string = 'out';
-  searchKeyword: string = "";
+  searchKeyWord: string = "";
+  isSearchResultEmpty: boolean = false;
 
   search() {
-    this.artService.findArtByName(this.searchKeyword).subscribe(res => this.artObserver.next(res))
+    this.artService.findArtByName(this.searchKeyWord).subscribe(res => {
+      this.artObserver.next(res);
+      console.log(res.length==0);
+      (res.length==0) ? this.isSearchResultEmpty = true : this.isSearchResultEmpty = false;
+    })
+  }
+
+  searchInputKeyUp(){
+    if (this.isSearchInputEmpty()){
+      this.artService.getArtsForHomePage().subscribe(res => this.artObserver.next(res));
+      this.isSearchResultEmpty = false;
+    }
+  }
+
+  isSearchInputEmpty():boolean{
+    if (this.searchKeyWord==="") return true;
   }
 
   toggleLoginField(): void {
@@ -41,6 +57,4 @@ export class HeadBarComponent {
       this.btnState = "out";
     }
   }
-
-
 }
