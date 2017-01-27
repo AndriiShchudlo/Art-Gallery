@@ -1,9 +1,7 @@
-import {Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
-import {Art} from "../object/art";
+import {Component, trigger, state, style, transition, animate} from '@angular/core';
 import {ArtService} from "../service/art.service";
-import {LoginField} from "../login-field.component/login-field.component"
-import {ArtContainer} from "../art-container.component/art-container.component";
-
+import {ArtObserver} from "../service/art-resources.service";
+import 'rxjs/Rx';
 @Component({
   selector: 'headbar',
   templateUrl: './headbar.component.html',
@@ -23,15 +21,17 @@ import {ArtContainer} from "../art-container.component/art-container.component";
     ])]
 })
 
-export class HeadBarComponent implements OnInit {
-  constructor(private searchService: ArtService,
-  private artContainer :ArtContainer) {
+export class HeadBarComponent {
+  constructor(private artService: ArtService,
+              private artObserver: ArtObserver) {
   }
 
   btnState: string = 'out';
-  searchKeyWord: string = "";
-  //apc.changeArts("")
-  arts: Art[] = [];
+  searchKeyword: string = "";
+
+  search() {
+    this.artService.findArtByName(this.searchKeyword).subscribe(res => this.artObserver.next(res))
+  }
 
   toggleLoginField(): void {
     if (this.btnState === 'out') {
@@ -42,13 +42,5 @@ export class HeadBarComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.searchService.get().then(search => this.arts = search);
-    //this.searchService.get().then(search => console.log(search));
-  }
-
-  btnSearchOnClick() {
-    this.searchService.findArtByName(this.searchKeyWord).then(search => this.arts = search);
-  }
 
 }

@@ -1,7 +1,5 @@
 import {Component} from "@angular/core";
 
-import 'rxjs/add/operator/switchMap';
-
 @Component({
   moduleId: module.id,
   selector: 'home-component',

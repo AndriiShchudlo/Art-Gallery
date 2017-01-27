@@ -17,12 +17,11 @@ export class RightSlide implements OnInit{
 
   tags: Tag[] = [];
 
-  ngOnInit() {    
+  ngOnInit() {
     this.artService.getAllTags().then(tags => this.tags = tags);
-    console.log(this.tags)
   }
-    
- 
+
+
 }
 
 

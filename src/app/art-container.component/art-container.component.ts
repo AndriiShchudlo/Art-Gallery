@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
-import {ArtService} from "../service/art.service";
 import {Art} from "../object/art";
-import {Observable} from "rxjs";
+import {ArtObserver} from "../service/art-resources.service";
+import {ArtService} from "../service/art.service";
 
 @Component({
   moduleId: module.id,
@@ -10,19 +10,17 @@ import {Observable} from "rxjs";
   styleUrls: ['art-container.component.css']
 })
 
-export class ArtContainer implements OnInit  {
+export class ArtContainer implements OnInit {
 
-  constructor (artService: ArtService){  }
+  constructor(private  artObserver: ArtObserver,
+              private artService: ArtService) {
+  }
 
-  arts: Observable<Art[]>;
+  arts: Art[] = [];
 
   ngOnInit() {
-    this.arts.subscribe(() => this.arts= this.artService.artSubj);
+    this.artService.getArtsForHomePage().subscribe(res => this.artObserver.next(res))
+    this.artObserver.subscribe(arts => this.arts = arts);
   }
-  show(arts:Art[]){
-    this.arts = arts;
-  }
-  findByName(arts) {
-    this.arts=arts;
-  }
+
 }

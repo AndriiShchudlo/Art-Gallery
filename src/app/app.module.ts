@@ -2,7 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {Observable} from 'rxjs/Observable'
 import {AppComponent} from './app.component/app.component';
 import {ArtService} from './service/art.service'
 import {ArtComponent} from "./art.component/art.component";
@@ -16,6 +15,7 @@ import {Footer} from "./footer.component/footer.component";
 import {RightSlide} from "./right-slide.component/right-slide.component"
 import {ArtComments} from './comments/art.comments';
 import {ComentsService} from './service/comment.service';
+import {ArtObserver} from "./service/art-resources.service";
 
 @NgModule({
   imports: [
@@ -42,7 +42,7 @@ import {ComentsService} from './service/comment.service';
     AppComponent, ArtComponent, ArtContainer, ArtDetailComponent,
     HeadBarComponent, LoginField, HomeComponent, ArtComments, Footer, RightSlide
   ],
-  providers: [ArtService, ArtContainer, ComentsService],
+  providers: [ArtService, ComentsService,ArtObserver],
   bootstrap: [AppComponent]
 })
 export class AppModule {

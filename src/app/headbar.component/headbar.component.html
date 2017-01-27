@@ -1,7 +1,7 @@
 <div class="header-group navbar navbar-inverse navbar-form">
   <div class="searching-group" aria-label="...">
-    <input [(ngModel)]="searchKeyWord" type="text" class="form-control" placeholder="Search">
-    <button (click)="btnSearchOnClick()" type="button" class="btn">Search</button>
+    <input [(ngModel)]="searchKeyword" type="text" class="form-control" placeholder="Search">
+    <button (click)="search()" type="button" class="btn">Search</button>
   </div>
   <log-field [@slideInOut]="btnState"></log-field>
   <div class="btn-group logging-group" role="group" aria-label="...">
