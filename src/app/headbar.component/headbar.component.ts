@@ -41,6 +41,7 @@ export class HeadBarComponent {
   searchInputKeyUp(){
     if (this.isSearchInputEmpty()){
       this.artService.getArtsForHomePage().subscribe(res => this.artObserver.next(res));
+      this.isSearchResultEmpty = false;
     }
   }
 
