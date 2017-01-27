@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ArtService} from "../service/art.service";
 import {Tag} from "../object/tag";
+import {ArtObserver} from "../service/art-resources.service";
 
 @Component({
   moduleId: module.id,
@@ -12,7 +13,8 @@ import {Tag} from "../object/tag";
 
 export class RightSlide implements OnInit{
 
-  constructor(private artService: ArtService) {
+  constructor(private artService: ArtService,
+              private artObserver: ArtObserver ) {
   }
 
   tags: Tag[] = [];
@@ -21,6 +23,9 @@ export class RightSlide implements OnInit{
     this.artService.getAllTags().then(tags => this.tags = tags);
   }
 
+  searchForTag(tagId:number){
+    this.artService.findByTagId(tagId).subscribe(res => this.artObserver.next(res))
+  }
 
 }
 

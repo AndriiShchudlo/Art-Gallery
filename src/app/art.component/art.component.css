@@ -14,7 +14,7 @@
   font-size: 100%;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
   margin: auto;
@@ -32,15 +32,34 @@
   top: 80%;
 }
 
-.side {
+.left-side {
   font-size: 15px;
   flex-grow: 1;
   margin-top: 7px;
+  padding-left: 10px;
+  width: 10%;
+}
+.left-side span{
+  margin-right:5px;
+}
+
+.right-side {
+
+  font-size: 13px;
+  flex-grow: 1;
+  margin-top: 7px;
+  padding-left:-25px;
+  width: 20%;
 }
 
 .center-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   flex-grow: 5;
-  max-width: 60%;
+  width: 70%;
+  max-width: 80%;
+
   padding: 10px;
   margin-top: -5px;
 }
@@ -48,6 +67,7 @@
 .center-info a.tag {
   font-size: 11px;
   margin: 3px;
+  height: 15px;
 }
 
 .like_style {
@@ -66,13 +86,9 @@
   float: left;
 }
 
-.view_style:hover {
-  color: cornflowerblue;
-}
-
 .my-flex-block {
   box-shadow: 10px 10px 40px 10px rgba(0, 0, 0, 0.9);
-  max-width: 33.33%;
+  width: 100%;
   overflow: hidden;
   margin-bottom: -6px;
 }

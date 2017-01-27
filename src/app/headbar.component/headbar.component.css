@@ -4,8 +4,15 @@
 body{
     background-color: #F5EFE6
 }
-
+.logo-group{
+  color:white;
+  width:50%;
+}
+.logo-group h1{
+  font-size:40px;
+}
 .header-group {
+  z-index: 200;
     margin: auto;
     height: 80px;
     width: 100%;
@@ -13,8 +20,10 @@ body{
     align-items: center;
    -webkit-flex-direction: row;
    flex-direction: row;
-   -webkit-justify-content: flex-end;
-   justify-content: flex-end;
+    justify-content: flex-end;
+
+    flex-wrap: nowrap;
+  align-content: center;
    border-top-left-radius: 0;
    border-top-right-radius: 0;
    font-style: bold;
@@ -22,8 +31,35 @@ body{
 
 
 .searching-group {
-    margin-right: 10px;
+  display:flex;
+  flex-wrap: nowrap;
+  padding: 10px;
+    margin: 10px;
 }
+
+.logo-group a{
+  color:white;
+}
+.logo-group a:hover{
+  color:white;
+  text-decoration:none;
+}
+
+.sign{
+
+  min-width: 150px;
+  display:flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+}
+.add-art-link{
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+
 
 .no-search-results{
     color: white;
@@ -33,3 +69,4 @@ body{
   height: 37em;
   max-height: 403px;
 }
+ 

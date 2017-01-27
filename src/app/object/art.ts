@@ -11,4 +11,10 @@ export class Art {
   tags : Tag[];
   owner : User;
 
+  constructor (name:string, imagePath: string, description: string){
+    this.name =name;
+    this.imagePath = imagePath;
+    this.description = description;
+  }
+
 }

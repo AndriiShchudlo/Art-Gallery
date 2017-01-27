@@ -15,6 +15,7 @@ import {Footer} from "./footer.component/footer.component";
 import {RightSlide} from "./right-slide.component/right-slide.component"
 import {ArtComments} from './comments/art.comments';
 import {ComentsService} from './service/comment.service';
+import {AddArtComponent} from './add-art.component/add-art.component';
 import {ArtObserver} from "./service/art-resources.service";
 
 @NgModule({
@@ -35,12 +36,17 @@ import {ArtObserver} from "./service/art-resources.service";
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
+      },
+      {
+        path: 'add-art',
+        component: AddArtComponent
       }
+
     ])
   ],
   declarations: [
     AppComponent, ArtComponent, ArtContainer, ArtDetailComponent,
-    HeadBarComponent, LoginField, HomeComponent, ArtComments, Footer, RightSlide
+    HeadBarComponent, LoginField, HomeComponent, ArtComments, Footer, RightSlide,AddArtComponent
   ],
   providers: [ArtService, ComentsService,ArtObserver],
   bootstrap: [AppComponent]
