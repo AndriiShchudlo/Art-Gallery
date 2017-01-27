@@ -11,13 +11,8 @@ const COMENTS: Coments[] = [
     author: 'Andrii',
     commentMessage: 'Nice.This work I really like. It is made at a high level',
     dateOfCreation: '12.06.15'
-  },
-  {
-    id: 3,
-    author: 'Олег',
-    commentMessage: 'Класно виглядає. Мені дуже подобається стиль виконання та підхід до кольорів.',
-    dateOfCreation: '12.06.15'
   }
+
 
 ];
 
@@ -33,6 +28,7 @@ export class ArtComments implements OnInit {
 
   @Input()
   artId: number;
+
 // coments = COMENTS;
   coments: Coments[] = [];
 
@@ -45,7 +41,10 @@ export class ArtComments implements OnInit {
 
   onSubmit(form: any): void {
     console.log(form);
-    this.comentsService.addComment(form);
+    this.comentsService.addComment(form,this.artId);
+      
+    this.comentsService.get(this.artId).then(com => this.coments = com);
+ 
 
   }
 

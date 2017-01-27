@@ -19,7 +19,6 @@ export class RightSlide implements OnInit{
 
   ngOnInit() {
     this.artService.getAllTags().then(tags => this.tags = tags);
-    console.log(this.tags)
   }
 
 

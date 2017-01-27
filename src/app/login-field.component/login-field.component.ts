@@ -6,6 +6,4 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['login-field.component.css']
 })
 
-export class LoginField {
-
-}
+export class LoginField {}
