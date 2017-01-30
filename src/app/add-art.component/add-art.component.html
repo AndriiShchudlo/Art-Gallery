@@ -4,7 +4,7 @@
 
     <div class="mini-image">
 
-      <img src={{newImagePath}} alt="please enter" >
+      <img src={{newImagePath}} alt="please insert image path into the source field" >
 
     </div>
 
@@ -26,7 +26,7 @@
       <textarea #description name="comment" cols="40" rows="3" ngModel></textarea>
       <br>
       <br>
-      <button type ="submit" (click) ="addArt(owner.value, name.value, imagePath.value, description.value)"></button>
+      <button  class="btn" (click) ="addArt(owner.value, name.value, imagePath.value, description.value)">Add Art</button>
 
     </div>
 
